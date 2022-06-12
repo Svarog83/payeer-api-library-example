@@ -11,18 +11,16 @@ namespace SV\PayeerAPI\Interfaces;
 
 interface APIHandler {
 	/**
-	 * @param array $request
-	 *
 	 * @return array
 	 */
-	public function Info( array $request ): array;
+	public function Info(): array;
 
 	/**
 	 * @param array $request
 	 *
 	 * @return array
 	 */
-	public function Orders( array $request ): array;
+	public function Orders( array $request = [] ): array;
 
 	/**
 	 * @return array
