@@ -6,7 +6,7 @@ declare( strict_types=1 );
  * Time: 16:44
  */
 
-namespace SV\src\Interfaces;
+namespace SV\PayeerAPI\Interfaces;
 
 
 interface APIHandler {
