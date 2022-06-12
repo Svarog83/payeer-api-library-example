@@ -19,14 +19,14 @@ class GuzzleAPIRequest implements Interfaces\APIRequest {
 		$method                             = $request['method'];
 
 		if ( $this->apiID && $this->apiSecret ) {
-			$params['post']['ts']           = round( microtime( TRUE ) * 1000 );
-			$options['body']                = json_encode( $params['post'] );
+			$request['post']['ts']          = round( microtime( TRUE ) * 1000 );
+			$options['body']                = json_encode( $request['post'] );
 			$options['headers']['API-ID']   = $this->apiID;
 			$options['headers']['API-SIGN'] = $this->getAPISign( $method . $options['body'] );
 		}
 
-		if ( !empty( $params['post'] ) && empty( $options['body'] ) ) {
-			$options['body'] = json_encode( $params['post'] );
+		if ( !empty( $request['post'] ) && empty( $options['body'] ) ) {
+			$options['body'] = json_encode( $request['post'] );
 		}
 
 		try {
