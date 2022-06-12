@@ -10,5 +10,7 @@ namespace SV\PayeerAPI\Interfaces;
 
 
 interface APIRequest {
-	public function sendRequest(array $request): array;
+	public function sendRequest( array $request ): array;
+
+	public function getErrors(): array;
 }

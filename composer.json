@@ -4,7 +4,7 @@
   "type": "library",
   "autoload": {
     "psr-4": {
-      "Svarog\\PayeerAPI\\": "src/"
+      "SV\\PayeerAPI\\": "src/"
     }
   },
   "authors": [
