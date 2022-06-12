@@ -33,6 +33,9 @@ class PayeerAPIHandler implements APIHandler {
 		return $this->sendRequest( 'info' );
 	}
 
+	/**
+	 * @return array
+	 */
 	public function Time(): array {
 		return $this->sendRequest( 'time' );
 	}

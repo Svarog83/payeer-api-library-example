@@ -14,6 +14,7 @@ class GuzzleAPIRequest implements Interfaces\APIRequest {
 		$this->httpClient = new Client();
 	}
 
+	/** @inheritDoc */
 	public function sendRequest( array $request ): array {
 		$options['headers']['Content-Type'] = 'application/json';
 		$method                             = $request['method'];
@@ -53,6 +54,8 @@ class GuzzleAPIRequest implements Interfaces\APIRequest {
 	}
 
 	/**
+	 * Calculates a signature for the API
+	 *
 	 * @param string $data
 	 * @return string
 	 */
@@ -60,11 +63,8 @@ class GuzzleAPIRequest implements Interfaces\APIRequest {
 		return hash_hmac( 'sha256', $data, $this->apiSecret ) ?? '';
 	}
 
-	/**
-	 * @return array
-	 */
-	public function getErrors(): array
-	{
+	/** @inheritDoc */
+	public function getErrors(): array {
 		return $this->errors;
 	}
 }
