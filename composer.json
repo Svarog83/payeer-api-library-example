@@ -2,6 +2,7 @@
   "name": "svarog/payeer-api-library-example",
   "description": "Example of payeer API library",
   "type": "library",
+  "license": "Apache-2.0",
   "autoload": {
     "psr-4": {
       "SV\\PayeerAPI\\": "src/"
